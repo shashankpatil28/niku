@@ -28,7 +28,7 @@ sudo systemctl start docker
 sudo usermod -aG docker "$USER"
 
 echo "==> Installing Volare"
-python3 -m pip install --user --upgrade --no-cache-dir volare
+python3 -m pip install --upgrade --no-cache-dir volare
 
 echo "==> Pulling OpenLane image"
 sudo docker pull "$OPENLANE_IMAGE"
