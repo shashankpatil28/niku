@@ -1,0 +1,12 @@
+[gold]
+read_verilog -I rtl rtl/common_defs.vh
+read_verilog -I rtl rtl/gray_counter.v
+prep -top gray_counter
+
+[gate]
+read_verilog synth/reports/gray_counter_netlist.v
+prep -top gray_counter
+
+[strategy simple]
+use sby
+

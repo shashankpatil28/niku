@@ -1,0 +1,22 @@
+.DS_Store
+*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# Simulation outputs
+sim/*.out
+sim/waves/*.vcd
+
+# Front-end generated reports
+synth/reports/
+formal/reports/
+reports/summary.csv
+
+# OpenLane generated runs and logs
+openlane/*/runs/
+
+# Local tool caches
+.volare/
+

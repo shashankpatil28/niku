@@ -1,0 +1,20 @@
+read_verilog -I rtl rtl/common_defs.vh
+read_verilog -I rtl rtl/@RTL_FILE@
+
+hierarchy -check -top @TOP_MODULE@
+
+proc
+opt
+fsm
+opt
+memory
+opt
+techmap
+opt
+
+abc
+clean
+
+tee -o synth/reports/@DESIGN_NAME@_stat.txt stat
+write_json synth/reports/@DESIGN_NAME@.json
+write_verilog -noattr synth/reports/@DESIGN_NAME@_netlist.v

@@ -1,0 +1,16 @@
+{
+  "DESIGN_NAME": "gray_counter_ce",
+  "VERILOG_FILES": [
+    "dir::src/common_defs.vh",
+    "dir::src/gray_counter_ce.v"
+  ],
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 10.0,
+  "FP_SIZING": "absolute",
+  "DIE_AREA": "0 0 120 120",
+  "CORE_AREA": "10 10 110 110",
+  "PL_TARGET_DENSITY": 0.45,
+  "RUN_CTS": true,
+  "PDK": "sky130A",
+  "STD_CELL_LIBRARY": "sky130_fd_sc_hd"
+}

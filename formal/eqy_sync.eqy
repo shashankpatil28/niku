@@ -1,0 +1,12 @@
+[gold]
+read_verilog -I rtl rtl/common_defs.vh
+read_verilog -I rtl rtl/sync_counter.v
+prep -top sync_counter
+
+[gate]
+read_verilog synth/reports/sync_counter_netlist.v
+prep -top sync_counter
+
+[strategy simple]
+use sby
+

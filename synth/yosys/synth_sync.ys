@@ -1,0 +1,21 @@
+read_verilog -I rtl rtl/common_defs.vh
+read_verilog -I rtl rtl/sync_counter.v
+
+hierarchy -check -top sync_counter
+
+proc
+opt
+fsm
+opt
+memory
+opt
+write_verilog -noattr synth/reports/sync_counter_formal_netlist.v
+techmap
+opt
+
+abc
+clean
+
+tee -o synth/reports/sync_counter_stat.txt stat
+write_json synth/reports/sync_counter.json
+write_verilog -noattr synth/reports/sync_counter_netlist.v

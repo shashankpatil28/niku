@@ -1,0 +1,21 @@
+read_verilog -I rtl rtl/common_defs.vh
+read_verilog rtl/gray_counter_ce.v
+prep -top gray_counter_ce
+async2sync
+clk2fflogic
+design -stash gold
+
+design -reset
+read_verilog synth/reports/gray_counter_ce_formal_netlist.v
+prep -top gray_counter_ce
+async2sync
+clk2fflogic
+design -stash gate
+
+design -copy-from gold -as gold gray_counter_ce
+design -copy-from gate -as gate gray_counter_ce
+
+equiv_make gold gate equiv
+prep -top equiv
+equiv_simple
+equiv_status -assert
