@@ -108,3 +108,4 @@ If you only want to prove one clean baseline and one low-power backend implement
 ./scripts/run_openlane_gray_ce.sh
 ```
 
+cp -r RUN_2026.04.07_18.06.04 /mnt/c/Users/nikita/Desktop/
